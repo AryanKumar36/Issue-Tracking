@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name = "description" content = "JavaScript Issue Tracker Application" >
+    <meta name = "author" content = "Kashyap" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" href="./statics/stylesheets/utility.css">
+    <link type="text/css" rel="stylesheet" href="./statics/stylesheets/animations.css">
+    <link type="text/css" rel="stylesheet" href="./statics/stylesheets/main.css">
+
+    <title>Issue Tracker</title>
+</head>
+<body class="main" id="main">
+    Loading...
+
+    <!-- ========== Internal Scripts ========== -->
+    <script>
+        const user = JSON.parse(localStorage.getItem("user"));
+        if (user) {
+            if (!user.verified)
+                window.location.replace(`${window.location.origin}/auth/login.html`)
+            else
+                window.location.replace(`${window.location.origin}/dashboard.html`)
+        } else
+            window.location.replace(`${window.location.origin}/auth/login.html`)
+    </script>
+</body>
+</html>
